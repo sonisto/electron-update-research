@@ -1,0 +1,29 @@
+{
+  "name": "sonisto",
+  "version": "0.2.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "build": {
+    "productName": "Sonisto",
+    "appId": "com.sonisto.app",
+    "linux": {
+      "category": "audio"
+    },
+    "publish": "github"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.5",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "electron": "^11.0.3",
+    "electron-builder": "^22.9.1",
+    "electron-webpack": "^2.8.2",
+    "webpack": "^4.44.2"
+  }
+}
